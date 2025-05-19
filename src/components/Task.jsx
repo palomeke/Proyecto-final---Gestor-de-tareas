@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Badge from "./Badge";
 import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
+
 const Task = ({ props, onDelete }) => {
   const [badgecolor, setBadgecolor] = useState();
   const [canDelete, setCanDelete] = useState(false);
@@ -103,13 +103,5 @@ const Task = ({ props, onDelete }) => {
     </div>
   );
 };
-MyComponent.propTypes = {
-  _id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  status: PropTypes.oneOf(["Pending", "Running", "Completed", "Failed"])
-    .isRequired,
-  dueDate: PropTypes.string,
-  onDelete: PropTypes.func.isRequired,
-};
+
 export default Task;
